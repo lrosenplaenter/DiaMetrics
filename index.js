@@ -6,7 +6,7 @@
  */
 
 /*** Show Tutorial ***/
-var show_tutorial = true;
+var show_tutorial_var = true;
 
 /*** Define Plot ***/
 var data = {
@@ -126,7 +126,7 @@ if (window.innerWidth <= 768) {
     display_device_alert ();
 } else if (!window.matchMedia('(pointer:fine)').matches) {
     display_device_alert ();
-} else if (show_tutorial == true){
+} else if (show_tutorial_var == true){
     show_tutorial()
 }
 
