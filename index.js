@@ -126,7 +126,7 @@ if (window.innerWidth <= 768) {
     display_device_alert ();
 } else if (!window.matchMedia('(pointer:fine)').matches) {
     display_device_alert ();
-} else if (show_tutorial){
+} else if (show_tutorial == true){
     show_tutorial()
 }
 
