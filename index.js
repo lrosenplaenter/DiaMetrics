@@ -122,8 +122,6 @@ var seperator_b = null;
 /*** Display device warning if nessecary ***/
 if (window.innerWidth <= 768) {
     display_device_alert ();
-} else if (('ontouchstart' in window || navigator.maxTouchPoints )&& window.innerWidth <= 768) {
-    display_device_alert ();
 } else if (!window.matchMedia('(pointer:fine)').matches) {
     display_device_alert ();
 } else if (show_tutorial_var == true){
