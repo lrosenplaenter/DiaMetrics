@@ -19,9 +19,17 @@ abstract: >-
   knowledge regarding the evaluation of binary
   classification with corresponding metrics.
 keywords:
-  - Binary Classification
-  - Binary Classification Evaluation
-  - Demo
+  - specificity
+  - sensitivity
+  - learning-by-doing
+  - binary-classification
+  - binary-classification-evaluation
+  - teaching-materials
+  - teaching-resources
+  - teaching-tool
+  - learning-materials
+  - learning-resources
+  - learning-tool
 license: MIT
 commit: initial commit
 version: 0.1.0
