@@ -185,36 +185,16 @@ function generate_data (status) {
 
     } else if (example == 2) {
         /** Man and Woman **/
-        label_A = 'Qualified candidates'
-        label_B = 'Unqualified candidates'
+        label_A = 'likely successful'
+        label_B = 'unlikely successful'
         label_scale_X = 'Reasoning (IQ)'
-        label_scale_Y = 'Leadership motivation (z-Score)'
+        label_scale_Y = 'Leadership experience (years)'
         color_A = '#008080'
         color_B = '#FF6F61'
 
-        // Qualified candidates
-        // Intelligence Quotient (IQ)
-        sample_mean_A_scaleX = 110;
-        sample_stdDev_A_scaleX = 5;
-        sample_A_scaleX_min = 85;
-        sample_A_scaleX_max = 130;
-        // Leadership motivation (z-Score)
-        sample_mean_A_scaleY = 1;
-        sample_stdDev_A_scaleY = 1;
-        sample_A_scaleY_min = -3;
-        sample_A_scaleY_max = 3;
-
-        // Unqualified candidates
-        // Intelligence Quotient (IQ)
-        sample_mean_B_scaleX = 105;
-        sample_stdDev_B_scaleX = 5;
-        sample_B_scaleX_min = 85;
-        sample_B_scaleX_max = 130;
-        // Leadership motivation (z-Score)
-        sample_mean_B_scaleY = -1;
-        sample_stdDev_B_scaleY = 1.5;
-        sample_B_scaleY_min = -3;
-        sample_B_scaleY_max = 2;
+        // import data from data.js
+        data_A = ext_data.data_a
+        data_B =ext_data.data_b
 
     } else if (example == 3) {
         /** Ill and healthy **/
@@ -250,15 +230,17 @@ function generate_data (status) {
         sample_B_scaleY_max = 30;
     }
 
-    // Generate the samples with the parameters defined above according to the example.
-    var data_A_ScaleX = generate_sample(sample_mean_A_scaleX, sample_stdDev_A_scaleX, sample_A_scaleX_min, sample_A_scaleX_max, sample_size_A);
-    var data_A_ScaleY = generate_sample(sample_mean_A_scaleY, sample_stdDev_A_scaleY, sample_A_scaleY_min, sample_A_scaleY_max, sample_size_A);
-    var data_B_ScaleX = generate_sample(sample_mean_B_scaleX, sample_stdDev_B_scaleX, sample_B_scaleX_min, sample_B_scaleX_max, sample_size_B);
-    var data_B_ScaleY = generate_sample(sample_mean_B_scaleY, sample_stdDev_B_scaleY, sample_B_scaleY_min, sample_B_scaleY_max, sample_size_B);
+    if (example == 1 || example == 3) {
+        // Generate the samples with the parameters defined above according to the example.
+        var data_A_ScaleX = generate_sample(sample_mean_A_scaleX, sample_stdDev_A_scaleX, sample_A_scaleX_min, sample_A_scaleX_max, sample_size_A);
+        var data_A_ScaleY = generate_sample(sample_mean_A_scaleY, sample_stdDev_A_scaleY, sample_A_scaleY_min, sample_A_scaleY_max, sample_size_A);
+        var data_B_ScaleX = generate_sample(sample_mean_B_scaleX, sample_stdDev_B_scaleX, sample_B_scaleX_min, sample_B_scaleX_max, sample_size_B);
+        var data_B_ScaleY = generate_sample(sample_mean_B_scaleY, sample_stdDev_B_scaleY, sample_B_scaleY_min, sample_B_scaleY_max, sample_size_B);
 
-    // Aggregate the scale values (x,y) for each of the two variables (A,B)
-    data_A = pair_x_y (data_A_ScaleX, data_A_ScaleY);
-    data_B = pair_x_y (data_B_ScaleX, data_B_ScaleY);
+        // Aggregate the scale values (x,y) for each of the two variables (A,B)
+        data_A = pair_x_y (data_A_ScaleX, data_A_ScaleY);
+        data_B = pair_x_y (data_B_ScaleX, data_B_ScaleY);
+    }
 
     // set scatter-datasets
     var datasets = [
@@ -770,9 +752,16 @@ function activate_interface(example) {
 
 
     // Set Buttons to active
-    var button_ids = ['btn_reset_seperator', 'btn_generate_sample']
-    for (var i in button_ids) {
-        document.getElementById(button_ids[i]).disabled = false;
+    console.log(example)
+    if (example == 1 || example == 3) {
+        console.log(example)
+        var button_ids = ['btn_reset_seperator', 'btn_generate_sample']
+        for (var i in button_ids) {
+            document.getElementById(button_ids[i]).disabled = false;
+        }
+    } else {
+        console.log(example)
+        document.getElementById("btn_generate_sample").disabled = true;
     }
 }
 
