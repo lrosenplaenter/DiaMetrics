@@ -784,13 +784,13 @@ function set_popover_content () {
         },
         /*Miss Rate*/
         {
-            definition: "The miss rate is the probability of a negative test result if the criterion in fact applies. In other words:: it's the rate of false negatives.", 
+            definition: "The miss rate is the probability of a negative test result if the criterion in fact applies. In other words: it's the rate of false negatives.", 
             synonyms: "false negative rate, β", 
             calculation: '<span class="popover_calc_color_FN">FN</span> / <span class="popover_calc_color_P">P</span>'
         },
         /*False Alarm Rate*/
         {
-            definition: "The false alarm rate is the probability of a positive test result if the criterion does not apply. In other words:: it's the rate of false positives.", 
+            definition: "The false alarm rate is the probability of a positive test result if the criterion does not apply. In other words: it's the rate of false positives.", 
             synonyms: "false positive rate, fall-out", 
             calculation: '<span class="popover_calc_color_FP">FP</span> / <span class="popover_calc_color_N">N</span>'
         },
@@ -820,13 +820,13 @@ function set_popover_content () {
         },
         /*Positive Likelihood Ratio*/
         {
-            definition: "The LR+ is the ratio of the probability of a positive test if the criterion applies, to the probability of a positive test result if the criterion does not apply. In other words, a <i>larger</i> LR+ suggests that the test is more effective at correctly identifying individuals meeting the criterion.", 
+            definition: "The LR+ is the ratio between the probability of a positive test result if the criterion applies, and the probability of a positive test result if the criterion does not apply. In other words, a <i>larger</i> LR+ suggests that the test is more effective in correctly identifying individuals meeting the criterion.", 
             synonyms: "LR+, likelihood ratio for positive results", 
             calculation: '<br>sensitivity / false alarm rate <br>= (<span class="popover_calc_color_TP">TP</span> / <span class="popover_calc_color_P">P</span>) / (<span class="popover_calc_color_FP">FP</span> / <span class="popover_calc_color_N">N</span>)'
         },
         /*Negative Likelihood Ratio*/
         {
-            definition: "The LR- is the ratio of the probability of a negative test if the criterion applies, to the probability of a negative test result if the criterion does not apply. In other words, a <i>smaller</i> LR- suggests that the test is more effective at correctly identifying individuals <i>not</i> meeting the criterion.", 
+            definition: "The LR- is the ratio between probability of a negative test result if the criterion applies, and the probability of a negative test result if the criterion does not apply. In other words, a <i>smaller</i> LR- suggests that the test is more effective in correctly identifying individuals <i>not</i> meeting the criterion.", 
             synonyms: "LR-, likelihood ratio for negative results", 
             calculation: '<br>miss rate / specificity <br>= (<span class="popover_calc_color_FN">FN</span> / <span class="popover_calc_color_P">P</span>) / (<span class="popover_calc_color_TN">TN</span> / <span class="popover_calc_color_N">N</span>)'
         },
@@ -844,13 +844,13 @@ function set_popover_content () {
         },
         /*Diagnostic Odds Ratio*/
         {
-            definition: "Like the accuracy (or F1 & J), the DOR is a measure of the performance of the test. However, it is independent of the prevalence and is calculated as an odds ratio. It ranges from 0 - ∞. Whereby larger values (1<) indicate a better performance of the test.", 
+            definition: "Like the accuracy (or F1 & J), the DOR is a measure of the performance of the test. However, it is independent of the prevalence and is calculated as an odds ratio. It ranges from 0 - ∞. Whereby larger values (>1) indicate a better performance of the test.", 
             synonyms: "/", 
             calculation: '<br>Pos. likelihood ratio / Neg. likelihood ratio <br>= <b>(</b>sensitivity <b>/</b> false alarm rate<b>)</b> / <b>(</b>miss rate <b>/</b> specificity<b>)</b> <br>= <b>[</b>(<span class="popover_calc_color_TP">TP</span> / <span class="popover_calc_color_P">P</span>) <b>/</b> (<span class="popover_calc_color_FP">FP</span> / <span class="popover_calc_color_N">N</span>)<b>]</b> / <b>[</b>(<span class="popover_calc_color_FN">FN</span> / <span class="popover_calc_color_P">P</span>) <b>/</b> (<span class="popover_calc_color_TN">TN</span> / <span class="popover_calc_color_N">N</span>)<b>]</b>'
         },
         /*Youden's J*/
         {
-            definition: "Youden's J is another measure of a test's performance.  Youden's J can be useful when balancing the trade-off between specificity and sensitivity. The measure ranges from 0 to 1, with a higher value indicating a better discriminatory performance of the test.", 
+            definition: "Youden's J is another measure of a test's performance.  Youden's J can be useful when balancing the trade-off between specificity and sensitivity. The measure ranges from 0 - 1, with a higher value indicating a better discriminatory performance of the test.", 
             synonyms: "J-statistic, Youden's index, informedness", 
             calculation: '<br>sensitivity + sensitivity - 1 <br>= (<span class="popover_calc_color_TP">TP</span> / <span class="popover_calc_color_P">P</span>) + (<span class="popover_calc_color_TN">TN</span> / <span class="popover_calc_color_N">N</span>) - 1'
         },
