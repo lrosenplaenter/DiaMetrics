@@ -752,15 +752,13 @@ function activate_interface(example) {
 
 
     // Set Buttons to active
-    console.log(example)
     if (example == 1 || example == 3) {
-        console.log(example)
         var button_ids = ['btn_reset_seperator', 'btn_generate_sample']
         for (var i in button_ids) {
             document.getElementById(button_ids[i]).disabled = false;
         }
     } else {
-        console.log(example)
+        document.getElementById("btn_reset_seperator").disabled = false;
         document.getElementById("btn_generate_sample").disabled = true;
     }
 }
