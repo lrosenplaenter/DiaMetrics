@@ -300,6 +300,24 @@ function generate_data (status) {
     scatterChart.data.datasets = datasets;
     scatterChart.update();
 
+    if (example == 2) {
+        datasets.push(
+            {
+                // xy-pairs additional markings in the plot
+                label: 'female candidates',
+                data: ext_data.data_overlay,
+                borderColor: 'black',
+                backgroundColor: 'transparent',
+                pointStyle: 'round',
+                pointRadius: 3.5,
+                borderWidth: 1.5,
+            },
+        )
+    
+        scatterChart.data.datasets = datasets;
+        scatterChart.update();
+    }
+
     // activate buttons & text
     activate_interface(example); 
 

@@ -27,7 +27,7 @@
             <select class="form-select border-secondary-subtle" id="pick_example" onchange="generate_data('inital')">
                 <option value="0" selected>Pick an Example</option>
                 <option value="1" >1: Cats & Dogs</option>
-                <option value="2">2: Candidate selection</option>
+                <option value="2">2: Fairness in candidate selection</option>
                 <option value="3">3: Seperating psychopathologies</option>
             </select>
             <label for="pick_example">Pick an Example</label>
@@ -348,6 +348,9 @@
                                         However, there are a number of systematic differences between women and men when it comes to leadership experience: as women on average take on more care work (e.g. looking after children or relatives) than men, and also take more time off work to do so (<a href="https://www.oecd.org/Dev/Development-Gender/Unpaid_Care_Work.Pdf" target="_blank">OECD, 2014</a>; <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2023/03/PD23_084_621.html" target="_blank">DeStatis, 2023</a>). Therefore it is reasonable to assume that women (in management positions) have on average less management experience than men of the same age in similar positions. 
                                     </p>
                                     <p>
+                                        Female applicants are outlined in black in the plot. You can click on the legend of the plot to hide (and show) the different groups.
+                                    </p>
+                                    <p>
                                         <b>Setting</b>: As the HR-Manager responsible for selecting new management staff in a large company, you have access to data on intelligence (assessed via <definition data-bs-toggle="popover" class="custom-popover" data-bs-html="true" data-bs-placement="top" data-bs-original-title="Wilde-Intelligenz-Test 2" data-bs-content="<p><i>Wilde-Intelligence-Test 2</i></p><p>Kersting, M., Althoff, K., & Jäger, A. O. (2008). <i>WIT-2: Der Wilde-Intelligenztest. Verfahrenshinweise</i>. Hogrefe.</p>" data-bs-trigger="hover">WIT-2</definition>; subscale "Reasoning") 
                                         and and leadership experience (in years) of <i>N</i> = 400 applicants for an open management position.
                                         All candidates placed above the separator will be invited to the further application process.
@@ -375,6 +378,9 @@
                                         </li>
                                         <li class="mb-2">
                                             Activate the <definition data-bs-toggle="popover" class="custom-popover" data-bs-html="true" data-bs-placement="top" data-bs-original-title="False Discovery Rate" data-bs-content="" data-bs-trigger="hover" onmouseover="show_colours_calc_table('show', 'fdr')" onmouseout="show_colours_calc_table()">false discovery rate</definition> and the <definition data-bs-toggle="popover" class="custom-popover" data-bs-html="true" data-bs-placement="top" data-bs-original-title="False Omission Rate" data-bs-content="" data-bs-trigger="hover" onmouseover="show_colours_calc_table('show', 'for')" onmouseout="show_colours_calc_table()">false omission rate</definition> in the settings. What is their relationship to the <definition data-bs-toggle="popover" class="custom-popover" data-bs-html="true" data-bs-placement="top" data-bs-original-title="Positive Predictive Value" data-bs-content="" data-bs-trigger="hover" onmouseover="show_colours_calc_table('show', 'ppv')" onmouseout="show_colours_calc_table()">positive</definition> and <definition data-bs-toggle="popover" class="custom-popover" data-bs-html="true" data-bs-placement="top" data-bs-original-title="Negative Predictive Value" data-bs-content="" data-bs-trigger="hover" onmouseover="show_colours_calc_table('show', 'npv')" onmouseout="show_colours_calc_table()">negative predictive value</definition>?
+                                        </li>
+                                        <li class="mb-2">
+                                            Now let's move on to another topic: Fairness. Would you recommend your company to continue using (and paying for!) the third-party machine learning model? What are the pros and cons?
                                         </li>
                                     </ul>
                                     <div class="accordion" id="accordion_example_2">
