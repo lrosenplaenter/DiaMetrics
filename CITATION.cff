@@ -15,9 +15,11 @@ authors:
 repository-code: 'https://github.com/lrosenplaenter/DiaMetrics'
 url: 'https://lrosenplaenter.github.io/DiaMetrics'
 abstract: >-
-  DiaMetrics is a html-based demo to deepen the user's
-  knowledge regarding the evaluation of binary
-  classification with corresponding metrics.
+  DiaMetrics is a web-based educational resource for exploring 
+  important concepts regarding binary classification (and its 
+  evaluation), which is important in many different fields 
+  such as psychodiagnostics (e.g. in determining cut-off 
+  values for tests), machine learning or medical testing.
 keywords:
   - specificity
   - sensitivity
@@ -31,6 +33,6 @@ keywords:
   - learning-resources
   - learning-tool
 license: MIT
-commit: initial commit
-version: 0.1.0
-date-released: '2023-12-05'
+commit: v1.0.0
+version: 1.0.0
+date-released: '2024-01-30'
