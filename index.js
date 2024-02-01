@@ -54,7 +54,7 @@ var options = {
             onDragStart: (event) => {
                 event.target.style.cursor = 'grabbing'
             },
-            onDrag: () => {
+            onDrag: (event) => {
                 if (!throttleTimeout) {
                     // call the functions max x-times per second
                     throttleTimeout = setTimeout(() => {
@@ -311,6 +311,7 @@ function generate_data (status) {
                 pointStyle: 'round',
                 pointRadius: 3.5,
                 borderWidth: 1.5,
+                dragData: false,
             },
         )
     
@@ -892,7 +893,7 @@ function set_popover_content () {
             '<div class="row"><div class="col-md-6 p-1"><b>Definition</b>: '+content[2].definition+'</div><div class="col-md-6 p-1"><b>Synonyms</b>: '+content[2].synonyms+'</div><div class="col-md-6 p-1"><b>Calculation</b>: '+content[2].calculation+'</div></div>',
             '<div class="row"><div class="col-md-6 p-1"><b>Definition</b>: '+content[2].definition+'</div><div class="col-md-6 p-1"><b>Example</b>: The proportion of cats that are categorized as chihuahuas by the test.</div><div class="col-md-6 p-1"><b>Synonyms</b>: '+content[2].synonyms+'</div><div class="col-md-6 p-1"><b>Calculation</b>: '+content[2].calculation+'</div></div>',
             '<div class="row"><div class="col-md-6 p-1"><b>Definition</b>: '+content[2].definition+'</div><div class="col-md-6 p-1"><b>Example</b>: The proportion of likely successful candidates that are not invited.</div><div class="col-md-6 p-1"><b>Synonyms</b>: '+content[2].synonyms+'</div><div class="col-md-6 p-1"><b>Calculation</b>: '+content[2].calculation+'</div></div>',
-            '<div class="row"><div class="col-md-6 p-1"><b>Definition</b>: '+content[2].definition+'</div><div class="col-md-6 p-1"><b>Example</b>: The proportion of patients with depression that are falsely identified as patients with anxiety such by the test.</div><div class="col-md-6 p-1"><b>Synonyms</b>: '+content[2].synonyms+'</div><div class="col-md-6 p-1"><b>Calculation</b>: '+content[2].calculation+'</div></div>'
+            '<div class="row"><div class="col-md-6 p-1"><b>Definition</b>: '+content[2].definition+'</div><div class="col-md-6 p-1"><b>Example</b>: The proportion of patients with depression that are falsely identified as patients with anxiety by the test.</div><div class="col-md-6 p-1"><b>Synonyms</b>: '+content[2].synonyms+'</div><div class="col-md-6 p-1"><b>Calculation</b>: '+content[2].calculation+'</div></div>'
         ]},
         {keyword: "False Alarm Rate", content: [
             '<div class="row"><div class="col-md-6 p-1"><b>Definition</b>: '+content[3].definition+'</div><div class="col-md-6 p-1"><b>Synonyms</b>: '+content[3].synonyms+'</div><div class="col-md-6 p-1"><b>Calculation</b>: '+content[3].calculation+'</div></div>',
