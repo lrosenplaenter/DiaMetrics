@@ -293,8 +293,8 @@ function removeFirstOption_tutorial() {
 }
 
 
-var seperator_m = 0;
-seperator_b = 0;
+var separator_m = 0;
+separator_b = 0;
 
 // calc the linear equation (blue line) and reset point depending on calulated variable to axis values
 function determine_equation_tutorial() {
@@ -315,11 +315,11 @@ function determine_equation_tutorial() {
 
     // calc slope
     var m = deviation_y / deviation_x
-    seperator_m = m //set value to global var
+    separator_m = m //set value to global var
 
     // calc intercept
     var b = -m * coordinates[0].x_value + coordinates[0].y_value
-    seperator_b = b
+    separator_b = b
 
     // calculate the new points of the linear line and update the plot
     // get min & max value of the x axis
@@ -360,11 +360,11 @@ function calc_tutorial() {
     var data_X = scatterChart_tutorial_2.data.datasets[0].data
     var data_Y = scatterChart_tutorial_2.data.datasets[1].data
 
-    // count points above & below seperator for X
+    // count points above & below separator for X
     var num_above_X = 0;
     var num_below_X = 0;
     for (var i in data_X) {
-        var y = data_X[i].x * seperator_m + seperator_b // y = x * m + b
+        var y = data_X[i].x * separator_m + separator_b // y = x * m + b
         if (data_X[i].y >= y) {
             num_above_X ++;
         } else if (data_X[i].y < y) {
@@ -372,11 +372,11 @@ function calc_tutorial() {
         }
     }
 
-    // count points above & below seperator for Y
+    // count points above & below separator for Y
     var num_above_Y = 0;
     var num_below_Y = 0;
     for (var i in data_Y) {
-        var y = data_Y[i].x * seperator_m + seperator_b // y = x * m + b
+        var y = data_Y[i].x * separator_m + separator_b // y = x * m + b
         if (data_Y[i].y >= y) {
             num_above_Y ++;
         } else if (data_Y[i].y < y) {

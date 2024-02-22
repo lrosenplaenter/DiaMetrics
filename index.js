@@ -13,9 +13,9 @@ var data = {
     datasets: []
 };
 
-// vars used to limit the rate of calls while dragging the seperator
+// vars used to limit the rate of calls while dragging the separator
 var throttleTimeout;
-const throttleDelay = 50; //delay between calls while dragging the seperator in ms
+const throttleDelay = 50; //delay between calls while dragging the separator in ms
 
 // configuration of scatter-plot
 var new_coordinates; // var to hold values of new points calculated on drag of the blue line
@@ -113,11 +113,11 @@ var sample_size_A = 200;
 var sample_size_B = 200;
 var data_A = null;
 var data_B = null;
-var data_C = null; // data points for the seperator
+var data_C = null; // data points for the separator
 var color_A= '#000000';
 var color_B = '#000000';
-var seperator_m = null;
-var seperator_b = null;
+var separator_m = null;
+var separator_b = null;
 
 /*** Display device warning if nessecary ***/
 if (window.innerWidth <= 768) {
@@ -268,7 +268,7 @@ function generate_data (status) {
     scatterChart.options.scales.y.title.text = label_scale_Y;
     scatterChart.update();
 
-    // if the function is called by example-picker-dropdown, generate seperator-line, if the function is called by the "Draw new Sample"-Buttton, do nothing
+    // if the function is called by example-picker-dropdown, generate separator-line, if the function is called by the "Draw new Sample"-Buttton, do nothing
     if (status == 'inital') {
         //set line diagram (delayed, because diagram must be rendered first), with regression data
         data_C = linear_regression();
@@ -278,8 +278,8 @@ function generate_data (status) {
         var x_axis_min = scatterChart.scales.x.min
         var x_axis_max = scatterChart.scales.x.max
         // calc y-values for min & max values of x axis
-        var ay = x_axis_min * seperator_m + seperator_b
-        var by = x_axis_max * seperator_m + seperator_b
+        var ay = x_axis_min * separator_m + separator_b
+        var by = x_axis_max * separator_m + separator_b
         data_C = [{x: x_axis_min, y: ay},{x: x_axis_max, y: by}]
     }
 
@@ -351,11 +351,11 @@ function determine_equation() {
 
     // calc slope
     var m = deviation_y / deviation_x
-    seperator_m = m //set value to global var
+    separator_m = m //set value to global var
 
     // calc intercept
     var b = -m * coordinates[0].x_value + coordinates[0].y_value
-    seperator_b = b
+    separator_b = b
 
     // calculate the new points of the linear line and update the plot
     // get min & max value of the x axis
@@ -423,11 +423,11 @@ function linear_regression() {
         denominator += x_Diff * x_Diff;
     }
     const m = numerator / denominator;
-    seperator_m = m //set to global var
+    separator_m = m //set to global var
     const b = mean_Y - m * mean_X;
-    seperator_b = b //set to global var
+    separator_b = b //set to global var
 
-    // Calc Points for the seperator
+    // Calc Points for the separator
     // get min & max value of the x axis
     var x_axis_min = scatterChart.scales.x.min
     var x_axis_max = scatterChart.scales.x.max
@@ -439,8 +439,8 @@ function linear_regression() {
     return result;
 }
 
-//reset the seperator-line on button click
-function reset_seperator () {
+//reset the separator-line on button click
+function reset_separator () {
     scatterChart.data.datasets[2].data = linear_regression();
     scatterChart.update();
     calc();
@@ -451,11 +451,11 @@ function calc () {
     var data_X = scatterChart.data.datasets[0].data
     var data_Y = scatterChart.data.datasets[1].data
 
-    // count points above & below seperator for X
+    // count points above & below separator for X
     var num_above_X = 0;
     var num_below_X = 0;
     for (var i in data_X) {
-        var y = data_X[i].x * seperator_m + seperator_b // y = x * m + b
+        var y = data_X[i].x * separator_m + separator_b // y = x * m + b
         if (data_X[i].y >= y) {
             num_above_X ++;
         } else if (data_X[i].y < y) {
@@ -463,11 +463,11 @@ function calc () {
         }
     }
 
-    // count points above & below seperator for Y
+    // count points above & below separator for Y
     var num_above_Y = 0;
     var num_below_Y = 0;
     for (var i in data_Y) {
-        var y = data_Y[i].x * seperator_m + seperator_b // y = x * m + b
+        var y = data_Y[i].x * separator_m + separator_b // y = x * m + b
         if (data_Y[i].y >= y) {
             num_above_Y ++;
         } else if (data_Y[i].y < y) {
@@ -697,7 +697,7 @@ window.addEventListener('resize', resize_canvas);
 resize_canvas();
 function resize_canvas () {
     var tests_container_elem_height = document.getElementById('tests_container').clientHeight;
-    var button_height = 31//document.getElementById('btn_reset_seperator').clientHeight;
+    var button_height = 31//document.getElementById('btn_reset_separator').clientHeight;
     var canvas_elem = document.getElementById('chart_container_inner')
 
     // check width, to determine if orientation is horizontal (e.g. the "results" are displayed on the left, not below the chart)
@@ -772,12 +772,12 @@ function activate_interface(example) {
 
     // Set Buttons to active
     if (example == 1 || example == 3) {
-        var button_ids = ['btn_reset_seperator', 'btn_generate_sample']
+        var button_ids = ['btn_reset_separator', 'btn_generate_sample']
         for (var i in button_ids) {
             document.getElementById(button_ids[i]).disabled = false;
         }
     } else {
-        document.getElementById("btn_reset_seperator").disabled = false;
+        document.getElementById("btn_reset_separator").disabled = false;
         document.getElementById("btn_generate_sample").disabled = true;
     }
 }
