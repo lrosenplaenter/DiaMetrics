@@ -294,6 +294,7 @@ function generate_data (status) {
             dragData: true,
             pointRadius: 6,
             borderCapStyle: 'round',
+            pointHitRadius: 25
         },
     )
 
